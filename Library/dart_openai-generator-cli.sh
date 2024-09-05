@@ -133,9 +133,6 @@ echo "GENERATION DONE!"
 
 # Reformat + rebuild
 read -n 1 -p "Review any unusual changes. Press any key to apply fixes..."
-cp -R "$(pwd)/Library/resources/dart/" "$(pwd)/lib/src/"
-dart run build_runner build --delete-conflicting-outputs
-dart fix --apply && dart format -l 100 .
 
 # Fix analysis_options.yaml to ignore library resources
 cd "$(pwd)/Library/artifacts" || exit 1

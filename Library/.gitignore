@@ -1,4 +1,5 @@
 *.jar
+swagger.json
 
 apache-maven-*/
 artifacts/
