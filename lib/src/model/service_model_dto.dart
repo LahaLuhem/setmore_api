@@ -19,28 +19,32 @@ part 'service_model_dto.g.dart';
 /// * [bufferDuration]
 /// * [cost]
 /// * [currency]
+/// * [imageUrl]
 @BuiltValue()
 abstract class ServiceModelDto implements Built<ServiceModelDto, ServiceModelDtoBuilder> {
   @BuiltValueField(wireName: r'key')
-  String? get key;
+  String get key;
 
   @BuiltValueField(wireName: r'service_name')
-  String? get serviceName;
+  String get serviceName;
 
   @BuiltValueField(wireName: r'staff_keys')
-  BuiltList<String>? get staffKeys;
+  BuiltList<String> get staffKeys;
 
   @BuiltValueField(wireName: r'duration')
-  int? get duration;
+  int get duration;
 
   @BuiltValueField(wireName: r'buffer_duration')
   int? get bufferDuration;
 
   @BuiltValueField(wireName: r'cost')
-  double? get cost;
+  double get cost;
 
   @BuiltValueField(wireName: r'currency')
-  String? get currency;
+  String get currency;
+
+  @BuiltValueField(wireName: r'image_url')
+  String get imageUrl;
 
   ServiceModelDto._();
 
@@ -65,34 +69,26 @@ class _$ServiceModelDtoSerializer implements PrimitiveSerializer<ServiceModelDto
     ServiceModelDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.serviceName != null) {
-      yield r'service_name';
-      yield serializers.serialize(
-        object.serviceName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.staffKeys != null) {
-      yield r'staff_keys';
-      yield serializers.serialize(
-        object.staffKeys,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.duration != null) {
-      yield r'duration';
-      yield serializers.serialize(
-        object.duration,
-        specifiedType: const FullType(int),
-      );
-    }
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'service_name';
+    yield serializers.serialize(
+      object.serviceName,
+      specifiedType: const FullType(String),
+    );
+    yield r'staff_keys';
+    yield serializers.serialize(
+      object.staffKeys,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'duration';
+    yield serializers.serialize(
+      object.duration,
+      specifiedType: const FullType(int),
+    );
     if (object.bufferDuration != null) {
       yield r'buffer_duration';
       yield serializers.serialize(
@@ -100,20 +96,21 @@ class _$ServiceModelDtoSerializer implements PrimitiveSerializer<ServiceModelDto
         specifiedType: const FullType(int),
       );
     }
-    if (object.cost != null) {
-      yield r'cost';
-      yield serializers.serialize(
-        object.cost,
-        specifiedType: const FullType(double),
-      );
-    }
-    if (object.currency != null) {
-      yield r'currency';
-      yield serializers.serialize(
-        object.currency,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'cost';
+    yield serializers.serialize(
+      object.cost,
+      specifiedType: const FullType(double),
+    );
+    yield r'currency';
+    yield serializers.serialize(
+      object.currency,
+      specifiedType: const FullType(String),
+    );
+    yield r'image_url';
+    yield serializers.serialize(
+      object.imageUrl,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -185,6 +182,13 @@ class _$ServiceModelDtoSerializer implements PrimitiveSerializer<ServiceModelDto
             specifiedType: const FullType(String),
           ) as String;
           result.currency = valueDes;
+          break;
+        case r'image_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.imageUrl = valueDes;
           break;
         default:
           unhandled.add(key);

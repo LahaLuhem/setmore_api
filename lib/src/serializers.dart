@@ -26,6 +26,7 @@ import 'package:setmore_client/src/model/bookingapi_customer_create_post200_resp
 import 'package:setmore_client/src/model/bookingapi_customer_create_post200_response_data.dart';
 import 'package:setmore_client/src/model/bookingapi_customer_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_customer_get200_response_data.dart';
+import 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response_data.dart';
 import 'package:setmore_client/src/model/bookingapi_staffs_get200_response.dart';
@@ -60,6 +61,7 @@ part 'serializers.g.dart';
   BookingapiCustomerCreatePost200ResponseData,
   BookingapiCustomerGet200Response,
   BookingapiCustomerGet200ResponseData,
+  BookingapiServicesCategoriesCategoryKeyGet200Response,
   BookingapiServicesCategoriesGet200Response,
   BookingapiServicesCategoriesGet200ResponseData,
   BookingapiStaffsGet200Response,

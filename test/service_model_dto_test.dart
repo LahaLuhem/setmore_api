@@ -41,5 +41,10 @@ void main() {
     test('to test the property `currency`', () async {
       // TODO
     });
+
+    // String imageUrl
+    test('to test the property `imageUrl`', () async {
+      // TODO
+    });
   });
 }

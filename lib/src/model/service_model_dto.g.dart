@@ -8,32 +8,43 @@ part of 'service_model_dto.dart';
 
 class _$ServiceModelDto extends ServiceModelDto {
   @override
-  final String? key;
+  final String key;
   @override
-  final String? serviceName;
+  final String serviceName;
   @override
-  final BuiltList<String>? staffKeys;
+  final BuiltList<String> staffKeys;
   @override
-  final int? duration;
+  final int duration;
   @override
   final int? bufferDuration;
   @override
-  final double? cost;
+  final double cost;
   @override
-  final String? currency;
+  final String currency;
+  @override
+  final String imageUrl;
 
   factory _$ServiceModelDto([void Function(ServiceModelDtoBuilder)? updates]) =>
       (new ServiceModelDtoBuilder()..update(updates))._build();
 
   _$ServiceModelDto._(
-      {this.key,
-      this.serviceName,
-      this.staffKeys,
-      this.duration,
+      {required this.key,
+      required this.serviceName,
+      required this.staffKeys,
+      required this.duration,
       this.bufferDuration,
-      this.cost,
-      this.currency})
-      : super._();
+      required this.cost,
+      required this.currency,
+      required this.imageUrl})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(key, r'ServiceModelDto', 'key');
+    BuiltValueNullFieldError.checkNotNull(serviceName, r'ServiceModelDto', 'serviceName');
+    BuiltValueNullFieldError.checkNotNull(staffKeys, r'ServiceModelDto', 'staffKeys');
+    BuiltValueNullFieldError.checkNotNull(duration, r'ServiceModelDto', 'duration');
+    BuiltValueNullFieldError.checkNotNull(cost, r'ServiceModelDto', 'cost');
+    BuiltValueNullFieldError.checkNotNull(currency, r'ServiceModelDto', 'currency');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, r'ServiceModelDto', 'imageUrl');
+  }
 
   @override
   ServiceModelDto rebuild(void Function(ServiceModelDtoBuilder) updates) =>
@@ -52,7 +63,8 @@ class _$ServiceModelDto extends ServiceModelDto {
         duration == other.duration &&
         bufferDuration == other.bufferDuration &&
         cost == other.cost &&
-        currency == other.currency;
+        currency == other.currency &&
+        imageUrl == other.imageUrl;
   }
 
   @override
@@ -65,6 +77,7 @@ class _$ServiceModelDto extends ServiceModelDto {
     _$hash = $jc(_$hash, bufferDuration.hashCode);
     _$hash = $jc(_$hash, cost.hashCode);
     _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, imageUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,7 +91,8 @@ class _$ServiceModelDto extends ServiceModelDto {
           ..add('duration', duration)
           ..add('bufferDuration', bufferDuration)
           ..add('cost', cost)
-          ..add('currency', currency))
+          ..add('currency', currency)
+          ..add('imageUrl', imageUrl))
         .toString();
   }
 }
@@ -114,6 +128,10 @@ class ServiceModelDtoBuilder implements Builder<ServiceModelDto, ServiceModelDto
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _imageUrl;
+  String? get imageUrl => _$this._imageUrl;
+  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
+
   ServiceModelDtoBuilder() {
     ServiceModelDto._defaults(this);
   }
@@ -123,11 +141,12 @@ class ServiceModelDtoBuilder implements Builder<ServiceModelDto, ServiceModelDto
     if ($v != null) {
       _key = $v.key;
       _serviceName = $v.serviceName;
-      _staffKeys = $v.staffKeys?.toBuilder();
+      _staffKeys = $v.staffKeys.toBuilder();
       _duration = $v.duration;
       _bufferDuration = $v.bufferDuration;
       _cost = $v.cost;
       _currency = $v.currency;
+      _imageUrl = $v.imageUrl;
       _$v = null;
     }
     return this;
@@ -152,18 +171,23 @@ class ServiceModelDtoBuilder implements Builder<ServiceModelDto, ServiceModelDto
     try {
       _$result = _$v ??
           new _$ServiceModelDto._(
-              key: key,
-              serviceName: serviceName,
-              staffKeys: _staffKeys?.build(),
-              duration: duration,
+              key: BuiltValueNullFieldError.checkNotNull(key, r'ServiceModelDto', 'key'),
+              serviceName: BuiltValueNullFieldError.checkNotNull(
+                  serviceName, r'ServiceModelDto', 'serviceName'),
+              staffKeys: staffKeys.build(),
+              duration:
+                  BuiltValueNullFieldError.checkNotNull(duration, r'ServiceModelDto', 'duration'),
               bufferDuration: bufferDuration,
-              cost: cost,
-              currency: currency);
+              cost: BuiltValueNullFieldError.checkNotNull(cost, r'ServiceModelDto', 'cost'),
+              currency:
+                  BuiltValueNullFieldError.checkNotNull(currency, r'ServiceModelDto', 'currency'),
+              imageUrl:
+                  BuiltValueNullFieldError.checkNotNull(imageUrl, r'ServiceModelDto', 'imageUrl'));
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'staffKeys';
-        _staffKeys?.build();
+        staffKeys.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(r'ServiceModelDto', _$failedField, e.toString());
       }
