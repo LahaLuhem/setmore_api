@@ -1,3 +1,5 @@
-## 0.0.1
+## [0.0.1] - 2024-09-10
+### Added
+- Generate client from Swagger specification
 
-* TODO: Describe initial release.
+[0.0.1]: https://sources.didata.eu/dimerce/flutter/pos-app/-/releases/0.0.1
