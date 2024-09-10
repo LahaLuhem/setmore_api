@@ -1,7 +1,7 @@
 name: setmore_client
 version: 0.0.1
-description: OpenAPI API client
-homepage: homepage
+description: An API client for the Setmore booking system using OpenAPI API client specification. View, Schedule, Book and Manage appointments directly from the API.
+homepage: https://pub.dev/packages/setmore_client
 
 environment:
   sdk: '>=2.15.0 <4.0.0'
