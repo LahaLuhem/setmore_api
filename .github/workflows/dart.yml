@@ -1,0 +1,51 @@
+name: dart
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  dart-format-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.LATEST_FLUTTER_VERSION }}
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Check Dart format
+        run: dart format -l 100 --set-exit-if-changed .
+
+  code_quality:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && startsWith(github.base_ref, 'main')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.LATEST_FLUTTER_VERSION }}
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Run code metrics (JSON)
+        run: dart run dart_code_metrics:metrics lib -r json --disable-sunset-warning > gl-code-quality-report.json
+      - name: Run code metrics (HTML)
+        run: dart run dart_code_metrics:metrics lib -r html --disable-sunset-warning
+      - name: Upload code quality report
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-quality-report
+          path: gl-code-quality-report.json
+      - name: Upload metrics
+        uses: actions/upload-artifact@v3
+        with:
+          name: metrics
+          path: metrics
