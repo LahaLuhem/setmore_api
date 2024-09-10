@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bookingapiServicesGet**
-> BuiltList<ServiceModelDto> bookingapiServicesGet()
+> BookingapiServicesGet200Response bookingapiServicesGet()
 
 Fetch all services
 
@@ -120,7 +120,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;ServiceModelDto&gt;**](ServiceModelDto.md)
+[**BookingapiServicesGet200Response**](BookingapiServicesGet200Response.md)
 
 ### Authorization
 

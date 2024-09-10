@@ -22,6 +22,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BookingapiServicesCategoriesCategoryKeyGet200Response.serializer)
       ..add(BookingapiServicesCategoriesGet200Response.serializer)
       ..add(BookingapiServicesCategoriesGet200ResponseData.serializer)
+      ..add(BookingapiServicesGet200Response.serializer)
+      ..add(BookingapiServicesGet200ResponseData.serializer)
       ..add(BookingapiStaffsGet200Response.serializer)
       ..add(BookingapiStaffsGet200ResponseData.serializer)
       ..add(BookingapiUntestedAttributesForFetchingAppointmentsGet200Response.serializer)
@@ -47,6 +49,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<CustomerDetailsDto>())
       ..addBuilderFactory(const FullType(BuiltList, const [const FullType(ServiceCategoryDto)]),
           () => new ListBuilder<ServiceCategoryDto>())
+      ..addBuilderFactory(const FullType(BuiltList, const [const FullType(ServiceModelDto)]),
+          () => new ListBuilder<ServiceModelDto>())
       ..addBuilderFactory(const FullType(BuiltList, const [const FullType(StaffDto)]),
           () => new ListBuilder<StaffDto>())
       ..addBuilderFactory(const FullType(BuiltList, const [const FullType(String)]),

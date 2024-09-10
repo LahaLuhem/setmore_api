@@ -96,6 +96,8 @@ Class | Method | HTTP request | Description
  - [BookingapiServicesCategoriesCategoryKeyGet200Response](doc/BookingapiServicesCategoriesCategoryKeyGet200Response.md)
  - [BookingapiServicesCategoriesGet200Response](doc/BookingapiServicesCategoriesGet200Response.md)
  - [BookingapiServicesCategoriesGet200ResponseData](doc/BookingapiServicesCategoriesGet200ResponseData.md)
+ - [BookingapiServicesGet200Response](doc/BookingapiServicesGet200Response.md)
+ - [BookingapiServicesGet200ResponseData](doc/BookingapiServicesGet200ResponseData.md)
  - [BookingapiStaffsGet200Response](doc/BookingapiStaffsGet200Response.md)
  - [BookingapiStaffsGet200ResponseData](doc/BookingapiStaffsGet200ResponseData.md)
  - [BookingapiUntestedAttributesForFetchingAppointmentsGet200Response](doc/BookingapiUntestedAttributesForFetchingAppointmentsGet200Response.md)

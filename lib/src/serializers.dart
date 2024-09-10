@@ -29,6 +29,8 @@ import 'package:setmore_client/src/model/bookingapi_customer_get200_response_dat
 import 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response_data.dart';
+import 'package:setmore_client/src/model/bookingapi_services_get200_response.dart';
+import 'package:setmore_client/src/model/bookingapi_services_get200_response_data.dart';
 import 'package:setmore_client/src/model/bookingapi_staffs_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_staffs_get200_response_data.dart';
 import 'package:setmore_client/src/model/bookingapi_untested_attributes_for_fetching_appointments_get200_response.dart';
@@ -64,6 +66,8 @@ part 'serializers.g.dart';
   BookingapiServicesCategoriesCategoryKeyGet200Response,
   BookingapiServicesCategoriesGet200Response,
   BookingapiServicesCategoriesGet200ResponseData,
+  BookingapiServicesGet200Response,
+  BookingapiServicesGet200ResponseData,
   BookingapiStaffsGet200Response,
   BookingapiStaffsGet200ResponseData,
   BookingapiUntestedAttributesForFetchingAppointmentsGet200Response,
@@ -82,10 +86,6 @@ part 'serializers.g.dart';
   TokenDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ServiceModelDto)]),
-        () => ListBuilder<ServiceModelDto>(),
-      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

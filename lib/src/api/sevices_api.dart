@@ -7,11 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:setmore_client/src/api_util.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response.dart';
-import 'package:setmore_client/src/model/service_model_dto.dart';
+import 'package:setmore_client/src/model/bookingapi_services_get200_response.dart';
 
 class SevicesApi {
   final Dio _dio;
@@ -196,9 +195,9 @@ class SevicesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ServiceModelDto>] as data
+  /// Returns a [Future] containing a [Response] with a [BookingapiServicesGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ServiceModelDto>>> bookingapiServicesGet({
+  Future<Response<BookingapiServicesGet200Response>> bookingapiServicesGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -233,7 +232,7 @@ class SevicesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ServiceModelDto>? _responseData;
+    BookingapiServicesGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -241,8 +240,8 @@ class SevicesApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(ServiceModelDto)]),
-            ) as BuiltList<ServiceModelDto>;
+              specifiedType: const FullType(BookingapiServicesGet200Response),
+            ) as BookingapiServicesGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -253,7 +252,7 @@ class SevicesApi {
       );
     }
 
-    return Response<BuiltList<ServiceModelDto>>(
+    return Response<BookingapiServicesGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -32,6 +32,8 @@ export 'package:setmore_client/src/model/bookingapi_customer_get200_response_dat
 export 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_services_categories_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_services_categories_get200_response_data.dart';
+export 'package:setmore_client/src/model/bookingapi_services_get200_response.dart';
+export 'package:setmore_client/src/model/bookingapi_services_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_staffs_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_staffs_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_untested_attributes_for_fetching_appointments_get200_response.dart';
