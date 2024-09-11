@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // BookingapiServicesCategoriesGet200ResponseData data
+    // BookingapiServicesCategoriesCategoryKeyGet200ResponseData data
     test('to test the property `data`', () async {
       // TODO
     });

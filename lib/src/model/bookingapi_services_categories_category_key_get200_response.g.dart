@@ -13,7 +13,7 @@ class _$BookingapiServicesCategoriesCategoryKeyGet200Response
   @override
   final String? msg;
   @override
-  final BookingapiServicesCategoriesGet200ResponseData? data;
+  final BookingapiServicesCategoriesCategoryKeyGet200ResponseData? data;
 
   factory _$BookingapiServicesCategoriesCategoryKeyGet200Response(
           [void Function(BookingapiServicesCategoriesCategoryKeyGet200ResponseBuilder)? updates]) =>
@@ -75,10 +75,11 @@ class BookingapiServicesCategoriesCategoryKeyGet200ResponseBuilder
   String? get msg => _$this._msg;
   set msg(String? msg) => _$this._msg = msg;
 
-  BookingapiServicesCategoriesGet200ResponseDataBuilder? _data;
-  BookingapiServicesCategoriesGet200ResponseDataBuilder get data =>
-      _$this._data ??= new BookingapiServicesCategoriesGet200ResponseDataBuilder();
-  set data(BookingapiServicesCategoriesGet200ResponseDataBuilder? data) => _$this._data = data;
+  BookingapiServicesCategoriesCategoryKeyGet200ResponseDataBuilder? _data;
+  BookingapiServicesCategoriesCategoryKeyGet200ResponseDataBuilder get data =>
+      _$this._data ??= new BookingapiServicesCategoriesCategoryKeyGet200ResponseDataBuilder();
+  set data(BookingapiServicesCategoriesCategoryKeyGet200ResponseDataBuilder? data) =>
+      _$this._data = data;
 
   BookingapiServicesCategoriesCategoryKeyGet200ResponseBuilder() {
     BookingapiServicesCategoriesCategoryKeyGet200Response._defaults(this);

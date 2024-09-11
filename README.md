@@ -86,7 +86,6 @@ Class | Method | HTTP request | Description
  - [AppointmentWithCustomerDtoCustomer](doc/AppointmentWithCustomerDtoCustomer.md)
  - [BookingapiAppointmentCreatePost200Response](doc/BookingapiAppointmentCreatePost200Response.md)
  - [BookingapiAppointmentCreatePost200ResponseData](doc/BookingapiAppointmentCreatePost200ResponseData.md)
- - [BookingapiAppointmentsAppointmentKeyLabelPut200Response](doc/BookingapiAppointmentsAppointmentKeyLabelPut200Response.md)
  - [BookingapiAppointmentsGet200Response](doc/BookingapiAppointmentsGet200Response.md)
  - [BookingapiAppointmentsGet200ResponseData](doc/BookingapiAppointmentsGet200ResponseData.md)
  - [BookingapiCustomerCreatePost200Response](doc/BookingapiCustomerCreatePost200Response.md)
@@ -94,6 +93,7 @@ Class | Method | HTTP request | Description
  - [BookingapiCustomerGet200Response](doc/BookingapiCustomerGet200Response.md)
  - [BookingapiCustomerGet200ResponseData](doc/BookingapiCustomerGet200ResponseData.md)
  - [BookingapiServicesCategoriesCategoryKeyGet200Response](doc/BookingapiServicesCategoriesCategoryKeyGet200Response.md)
+ - [BookingapiServicesCategoriesCategoryKeyGet200ResponseData](doc/BookingapiServicesCategoriesCategoryKeyGet200ResponseData.md)
  - [BookingapiServicesCategoriesGet200Response](doc/BookingapiServicesCategoriesGet200Response.md)
  - [BookingapiServicesCategoriesGet200ResponseData](doc/BookingapiServicesCategoriesGet200ResponseData.md)
  - [BookingapiServicesGet200Response](doc/BookingapiServicesGet200Response.md)
@@ -127,5 +127,5 @@ Authentication schemes defined for the API:
 
 ## Author
 
-you@your-company.com
+
 

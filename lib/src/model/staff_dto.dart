@@ -12,6 +12,8 @@ part 'staff_dto.g.dart';
 ///
 /// Properties:
 /// * [key]
+/// * [companyKey]
+/// * [contactType]
 /// * [firstName]
 /// * [lastName]
 /// * [emailId]
@@ -22,13 +24,19 @@ part 'staff_dto.g.dart';
 @BuiltValue()
 abstract class StaffDto implements Built<StaffDto, StaffDtoBuilder> {
   @BuiltValueField(wireName: r'key')
-  String? get key;
+  String get key;
+
+  @BuiltValueField(wireName: r'company_key')
+  String get companyKey;
+
+  @BuiltValueField(wireName: r'contact_type')
+  String get contactType;
 
   @BuiltValueField(wireName: r'first_name')
-  String? get firstName;
+  String get firstName;
 
   @BuiltValueField(wireName: r'last_name')
-  String? get lastName;
+  String get lastName;
 
   @BuiltValueField(wireName: r'email_id')
   String? get emailId;
@@ -68,27 +76,31 @@ class _$StaffDtoSerializer implements PrimitiveSerializer<StaffDto> {
     StaffDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.firstName != null) {
-      yield r'first_name';
-      yield serializers.serialize(
-        object.firstName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastName != null) {
-      yield r'last_name';
-      yield serializers.serialize(
-        object.lastName,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'company_key';
+    yield serializers.serialize(
+      object.companyKey,
+      specifiedType: const FullType(String),
+    );
+    yield r'contact_type';
+    yield serializers.serialize(
+      object.contactType,
+      specifiedType: const FullType(String),
+    );
+    yield r'first_name';
+    yield serializers.serialize(
+      object.firstName,
+      specifiedType: const FullType(String),
+    );
+    yield r'last_name';
+    yield serializers.serialize(
+      object.lastName,
+      specifiedType: const FullType(String),
+    );
     if (object.emailId != null) {
       yield r'email_id';
       yield serializers.serialize(
@@ -153,6 +165,20 @@ class _$StaffDtoSerializer implements PrimitiveSerializer<StaffDto> {
             specifiedType: const FullType(String),
           ) as String;
           result.key = valueDes;
+          break;
+        case r'company_key':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.companyKey = valueDes;
+          break;
+        case r'contact_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.contactType = valueDes;
           break;
         case r'first_name':
           final valueDes = serializers.deserialize(

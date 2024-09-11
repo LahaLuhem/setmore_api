@@ -22,7 +22,7 @@ Fetch all staff
 import 'package:setmore_client/api.dart';
 
 final api = SetmoreClient().getStaffApi();
-final String cursor = xxxxxxxx; // String | Cursor for pagination to fetch the next batch of staff
+final String cursor = cursor_example; // String | Cursor for pagination to fetch the next batch of staff
 
 try {
     final response = api.bookingapiStaffsGet(cursor);

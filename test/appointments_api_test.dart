@@ -15,7 +15,7 @@ void main() {
 
     // Update an appointment label
     //
-    //Future<BookingapiAppointmentsAppointmentKeyLabelPut200Response> bookingapiAppointmentsAppointmentKeyLabelPut(String appointmentKey, String label) async
+    //Future<BookingapiAppointmentCreatePost200Response> bookingapiAppointmentsAppointmentKeyLabelPut(String appointmentKey, String label) async
     test('test bookingapiAppointmentsAppointmentKeyLabelPut', () async {
       // TODO
     });

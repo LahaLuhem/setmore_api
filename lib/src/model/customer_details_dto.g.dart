@@ -8,9 +8,13 @@ part of 'customer_details_dto.dart';
 
 class _$CustomerDetailsDto extends CustomerDetailsDto {
   @override
-  final String? key;
+  final String key;
   @override
-  final String? firstName;
+  final String companyKey;
+  @override
+  final String contactType;
+  @override
+  final String firstName;
   @override
   final String? emailId;
   @override
@@ -24,8 +28,20 @@ class _$CustomerDetailsDto extends CustomerDetailsDto {
       (new CustomerDetailsDtoBuilder()..update(updates))._build();
 
   _$CustomerDetailsDto._(
-      {this.key, this.firstName, this.emailId, this.cellPhone, this.address, this.additionalFields})
-      : super._();
+      {required this.key,
+      required this.companyKey,
+      required this.contactType,
+      required this.firstName,
+      this.emailId,
+      this.cellPhone,
+      this.address,
+      this.additionalFields})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(key, r'CustomerDetailsDto', 'key');
+    BuiltValueNullFieldError.checkNotNull(companyKey, r'CustomerDetailsDto', 'companyKey');
+    BuiltValueNullFieldError.checkNotNull(contactType, r'CustomerDetailsDto', 'contactType');
+    BuiltValueNullFieldError.checkNotNull(firstName, r'CustomerDetailsDto', 'firstName');
+  }
 
   @override
   CustomerDetailsDto rebuild(void Function(CustomerDetailsDtoBuilder) updates) =>
@@ -39,6 +55,8 @@ class _$CustomerDetailsDto extends CustomerDetailsDto {
     if (identical(other, this)) return true;
     return other is CustomerDetailsDto &&
         key == other.key &&
+        companyKey == other.companyKey &&
+        contactType == other.contactType &&
         firstName == other.firstName &&
         emailId == other.emailId &&
         cellPhone == other.cellPhone &&
@@ -50,6 +68,8 @@ class _$CustomerDetailsDto extends CustomerDetailsDto {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, key.hashCode);
+    _$hash = $jc(_$hash, companyKey.hashCode);
+    _$hash = $jc(_$hash, contactType.hashCode);
     _$hash = $jc(_$hash, firstName.hashCode);
     _$hash = $jc(_$hash, emailId.hashCode);
     _$hash = $jc(_$hash, cellPhone.hashCode);
@@ -63,6 +83,8 @@ class _$CustomerDetailsDto extends CustomerDetailsDto {
   String toString() {
     return (newBuiltValueToStringHelper(r'CustomerDetailsDto')
           ..add('key', key)
+          ..add('companyKey', companyKey)
+          ..add('contactType', contactType)
           ..add('firstName', firstName)
           ..add('emailId', emailId)
           ..add('cellPhone', cellPhone)
@@ -78,6 +100,14 @@ class CustomerDetailsDtoBuilder implements Builder<CustomerDetailsDto, CustomerD
   String? _key;
   String? get key => _$this._key;
   set key(String? key) => _$this._key = key;
+
+  String? _companyKey;
+  String? get companyKey => _$this._companyKey;
+  set companyKey(String? companyKey) => _$this._companyKey = companyKey;
+
+  String? _contactType;
+  String? get contactType => _$this._contactType;
+  set contactType(String? contactType) => _$this._contactType = contactType;
 
   String? _firstName;
   String? get firstName => _$this._firstName;
@@ -109,6 +139,8 @@ class CustomerDetailsDtoBuilder implements Builder<CustomerDetailsDto, CustomerD
     final $v = _$v;
     if ($v != null) {
       _key = $v.key;
+      _companyKey = $v.companyKey;
+      _contactType = $v.contactType;
       _firstName = $v.firstName;
       _emailId = $v.emailId;
       _cellPhone = $v.cellPhone;
@@ -138,8 +170,13 @@ class CustomerDetailsDtoBuilder implements Builder<CustomerDetailsDto, CustomerD
     try {
       _$result = _$v ??
           new _$CustomerDetailsDto._(
-              key: key,
-              firstName: firstName,
+              key: BuiltValueNullFieldError.checkNotNull(key, r'CustomerDetailsDto', 'key'),
+              companyKey: BuiltValueNullFieldError.checkNotNull(
+                  companyKey, r'CustomerDetailsDto', 'companyKey'),
+              contactType: BuiltValueNullFieldError.checkNotNull(
+                  contactType, r'CustomerDetailsDto', 'contactType'),
+              firstName: BuiltValueNullFieldError.checkNotNull(
+                  firstName, r'CustomerDetailsDto', 'firstName'),
               emailId: emailId,
               cellPhone: cellPhone,
               address: address,

@@ -14,17 +14,41 @@ part 'service_category_dto.g.dart';
 /// Properties:
 /// * [key]
 /// * [categoryName]
+/// * [companyId]
+/// * [categoryOrder]
 /// * [serviceIdList]
+/// * [createdDate]
+/// * [deleteFlag]
+/// * [isNew]
+/// * [brandId]
 @BuiltValue()
 abstract class ServiceCategoryDto implements Built<ServiceCategoryDto, ServiceCategoryDtoBuilder> {
   @BuiltValueField(wireName: r'key')
-  String? get key;
+  String get key;
 
   @BuiltValueField(wireName: r'categoryName')
-  String? get categoryName;
+  String get categoryName;
+
+  @BuiltValueField(wireName: r'companyId')
+  String get companyId;
+
+  @BuiltValueField(wireName: r'categoryOrder')
+  int get categoryOrder;
 
   @BuiltValueField(wireName: r'serviceIdList')
-  BuiltList<String>? get serviceIdList;
+  BuiltList<String> get serviceIdList;
+
+  @BuiltValueField(wireName: r'createdDate')
+  int get createdDate;
+
+  @BuiltValueField(wireName: r'deleteFlag')
+  bool get deleteFlag;
+
+  @BuiltValueField(wireName: r'isNew')
+  bool get isNew;
+
+  @BuiltValueField(wireName: r'brandId')
+  String get brandId;
 
   ServiceCategoryDto._();
 
@@ -49,27 +73,51 @@ class _$ServiceCategoryDtoSerializer implements PrimitiveSerializer<ServiceCateg
     ServiceCategoryDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.categoryName != null) {
-      yield r'categoryName';
-      yield serializers.serialize(
-        object.categoryName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.serviceIdList != null) {
-      yield r'serviceIdList';
-      yield serializers.serialize(
-        object.serviceIdList,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'categoryName';
+    yield serializers.serialize(
+      object.categoryName,
+      specifiedType: const FullType(String),
+    );
+    yield r'companyId';
+    yield serializers.serialize(
+      object.companyId,
+      specifiedType: const FullType(String),
+    );
+    yield r'categoryOrder';
+    yield serializers.serialize(
+      object.categoryOrder,
+      specifiedType: const FullType(int),
+    );
+    yield r'serviceIdList';
+    yield serializers.serialize(
+      object.serviceIdList,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'createdDate';
+    yield serializers.serialize(
+      object.createdDate,
+      specifiedType: const FullType(int),
+    );
+    yield r'deleteFlag';
+    yield serializers.serialize(
+      object.deleteFlag,
+      specifiedType: const FullType(bool),
+    );
+    yield r'isNew';
+    yield serializers.serialize(
+      object.isNew,
+      specifiedType: const FullType(bool),
+    );
+    yield r'brandId';
+    yield serializers.serialize(
+      object.brandId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -107,12 +155,54 @@ class _$ServiceCategoryDtoSerializer implements PrimitiveSerializer<ServiceCateg
           ) as String;
           result.categoryName = valueDes;
           break;
+        case r'companyId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.companyId = valueDes;
+          break;
+        case r'categoryOrder':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.categoryOrder = valueDes;
+          break;
         case r'serviceIdList':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.serviceIdList.replace(valueDes);
+          break;
+        case r'createdDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.createdDate = valueDes;
+          break;
+        case r'deleteFlag':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.deleteFlag = valueDes;
+          break;
+        case r'isNew':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isNew = valueDes;
+          break;
+        case r'brandId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.brandId = valueDes;
           break;
         default:
           unhandled.add(key);

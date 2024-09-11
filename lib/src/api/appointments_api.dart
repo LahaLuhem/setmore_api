@@ -9,7 +9,6 @@ import 'package:dio/dio.dart';
 
 import 'package:setmore_client/src/api_util.dart';
 import 'package:setmore_client/src/model/bookingapi_appointment_create_post200_response.dart';
-import 'package:setmore_client/src/model/bookingapi_appointments_appointment_key_label_put200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_appointments_get200_response.dart';
 import 'package:setmore_client/src/model/bookingapi_untested_attributes_for_fetching_appointments_get200_response.dart';
 import 'package:setmore_client/src/model/create_appointment_request_dto.dart';
@@ -136,9 +135,9 @@ class AppointmentsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BookingapiAppointmentsAppointmentKeyLabelPut200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BookingapiAppointmentCreatePost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BookingapiAppointmentsAppointmentKeyLabelPut200Response>>
+  Future<Response<BookingapiAppointmentCreatePost200Response>>
       bookingapiAppointmentsAppointmentKeyLabelPut({
     required String appointmentKey,
     required String label,
@@ -183,7 +182,7 @@ class AppointmentsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BookingapiAppointmentsAppointmentKeyLabelPut200Response? _responseData;
+    BookingapiAppointmentCreatePost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -191,9 +190,8 @@ class AppointmentsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType:
-                  const FullType(BookingapiAppointmentsAppointmentKeyLabelPut200Response),
-            ) as BookingapiAppointmentsAppointmentKeyLabelPut200Response;
+              specifiedType: const FullType(BookingapiAppointmentCreatePost200Response),
+            ) as BookingapiAppointmentCreatePost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -204,7 +202,7 @@ class AppointmentsApi {
       );
     }
 
-    return Response<BookingapiAppointmentsAppointmentKeyLabelPut200Response>(
+    return Response<BookingapiAppointmentCreatePost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
