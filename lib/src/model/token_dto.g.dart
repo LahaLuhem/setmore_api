@@ -8,18 +8,28 @@ part of 'token_dto.dart';
 
 class _$TokenDto extends TokenDto {
   @override
-  final String? accessToken;
+  final String accessToken;
   @override
-  final String? tokenType;
+  final String tokenType;
   @override
-  final int? expiresIn;
+  final int expiresIn;
   @override
-  final String? userId;
+  final String userId;
 
   factory _$TokenDto([void Function(TokenDtoBuilder)? updates]) =>
       (new TokenDtoBuilder()..update(updates))._build();
 
-  _$TokenDto._({this.accessToken, this.tokenType, this.expiresIn, this.userId}) : super._();
+  _$TokenDto._(
+      {required this.accessToken,
+      required this.tokenType,
+      required this.expiresIn,
+      required this.userId})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(accessToken, r'TokenDto', 'accessToken');
+    BuiltValueNullFieldError.checkNotNull(tokenType, r'TokenDto', 'tokenType');
+    BuiltValueNullFieldError.checkNotNull(expiresIn, r'TokenDto', 'expiresIn');
+    BuiltValueNullFieldError.checkNotNull(userId, r'TokenDto', 'userId');
+  }
 
   @override
   TokenDto rebuild(void Function(TokenDtoBuilder) updates) =>
@@ -112,7 +122,11 @@ class TokenDtoBuilder implements Builder<TokenDto, TokenDtoBuilder> {
   _$TokenDto _build() {
     final _$result = _$v ??
         new _$TokenDto._(
-            accessToken: accessToken, tokenType: tokenType, expiresIn: expiresIn, userId: userId);
+            accessToken:
+                BuiltValueNullFieldError.checkNotNull(accessToken, r'TokenDto', 'accessToken'),
+            tokenType: BuiltValueNullFieldError.checkNotNull(tokenType, r'TokenDto', 'tokenType'),
+            expiresIn: BuiltValueNullFieldError.checkNotNull(expiresIn, r'TokenDto', 'expiresIn'),
+            userId: BuiltValueNullFieldError.checkNotNull(userId, r'TokenDto', 'userId'));
     replace(_$result);
     return _$result;
   }

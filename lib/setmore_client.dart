@@ -22,7 +22,6 @@ export 'package:setmore_client/src/model/appointment_with_customer_dto.dart';
 export 'package:setmore_client/src/model/appointment_with_customer_dto_customer.dart';
 export 'package:setmore_client/src/model/bookingapi_appointment_create_post200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_appointment_create_post200_response_data.dart';
-export 'package:setmore_client/src/model/bookingapi_appointments_appointment_key_label_put200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_appointments_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_appointments_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_customer_create_post200_response.dart';
@@ -30,6 +29,7 @@ export 'package:setmore_client/src/model/bookingapi_customer_create_post200_resp
 export 'package:setmore_client/src/model/bookingapi_customer_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_customer_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response.dart';
+export 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_services_categories_get200_response.dart';
 export 'package:setmore_client/src/model/bookingapi_services_categories_get200_response_data.dart';
 export 'package:setmore_client/src/model/bookingapi_services_get200_response.dart';

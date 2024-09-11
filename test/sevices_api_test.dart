@@ -10,7 +10,7 @@ void main() {
     //
     // To get a list of all Services present in a particular category
     //
-    //Future<BookingapiServicesCategoriesGet200Response> bookingapiServicesCategoriesCategoryKeyGet(String categoryKey) async
+    //Future<BookingapiServicesCategoriesCategoryKeyGet200Response> bookingapiServicesCategoriesCategoryKeyGet(String categoryKey) async
     test('test bookingapiServicesCategoriesCategoryKeyGet', () async {
       // TODO
     });
@@ -26,7 +26,7 @@ void main() {
     //
     // To get the list of all the available services provided by your company
     //
-    //Future<BuiltList<ServiceModelDto>> bookingapiServicesGet() async
+    //Future<BookingapiServicesGet200Response> bookingapiServicesGet() async
     test('test bookingapiServicesGet', () async {
       // TODO
     });

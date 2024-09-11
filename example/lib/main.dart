@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> initState() async {
     final tokenResponse =
         await widget._setmoreClient.getAuthApi().oOauth2TokenGet(refreshToken: 'my_refresh_token');
-    final accessToken = tokenResponse.data!.data!.token!.accessToken!;
+    final accessToken = tokenResponse.data!.data!.token!.accessToken;
     widget._setmoreClient.setBearerAuth('BearerAuth', accessToken);
 
     final services = await widget._setmoreClient.getSevicesApi().bookingapiServicesGet();

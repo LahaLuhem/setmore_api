@@ -1,4 +1,4 @@
-# setmore_client.model.BookingapiAppointmentsAppointmentKeyLabelPut200Response
+# setmore_client.model.BookingapiServicesCategoriesCategoryKeyGet200ResponseData
 
 ## Load the model package
 ```dart
@@ -8,9 +8,7 @@ import 'package:setmore_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | **bool** |  | [optional] 
-**msg** | **String** |  | [optional] 
-**data** | [**BookingapiAppointmentCreatePost200ResponseData**](BookingapiAppointmentCreatePost200ResponseData.md) |  | [optional] 
+**services** | [**BuiltList&lt;ServiceCategoryDto&gt;**](ServiceCategoryDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

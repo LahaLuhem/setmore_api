@@ -8,8 +8,10 @@ import 'package:setmore_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** |  | [optional] 
-**firstName** | **String** |  | [optional] 
+**key** | **String** |  | 
+**companyKey** | **String** |  | 
+**contactType** | **String** |  | 
+**firstName** | **String** |  | 
 **emailId** | **String** |  | [optional] 
 **cellPhone** | **String** |  | [optional] 
 **address** | **String** |  | [optional] 

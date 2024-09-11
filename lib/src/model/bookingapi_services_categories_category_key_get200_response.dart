@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:setmore_client/src/model/bookingapi_services_categories_get200_response_data.dart';
+import 'package:setmore_client/src/model/bookingapi_services_categories_category_key_get200_response_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -27,7 +27,7 @@ abstract class BookingapiServicesCategoriesCategoryKeyGet200Response
   String? get msg;
 
   @BuiltValueField(wireName: r'data')
-  BookingapiServicesCategoriesGet200ResponseData? get data;
+  BookingapiServicesCategoriesCategoryKeyGet200ResponseData? get data;
 
   BookingapiServicesCategoriesCategoryKeyGet200Response._();
 
@@ -77,7 +77,7 @@ class _$BookingapiServicesCategoriesCategoryKeyGet200ResponseSerializer
       yield r'data';
       yield serializers.serialize(
         object.data,
-        specifiedType: const FullType(BookingapiServicesCategoriesGet200ResponseData),
+        specifiedType: const FullType(BookingapiServicesCategoriesCategoryKeyGet200ResponseData),
       );
     }
   }
@@ -120,8 +120,9 @@ class _$BookingapiServicesCategoriesCategoryKeyGet200ResponseSerializer
         case r'data':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BookingapiServicesCategoriesGet200ResponseData),
-          ) as BookingapiServicesCategoriesGet200ResponseData;
+            specifiedType:
+                const FullType(BookingapiServicesCategoriesCategoryKeyGet200ResponseData),
+          ) as BookingapiServicesCategoriesCategoryKeyGet200ResponseData;
           result.data.replace(valueDes);
           break;
         default:

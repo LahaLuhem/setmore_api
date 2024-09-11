@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bookingapiAppointmentsAppointmentKeyLabelPut**
-> BookingapiAppointmentsAppointmentKeyLabelPut200Response bookingapiAppointmentsAppointmentKeyLabelPut(appointmentKey, label)
+> BookingapiAppointmentCreatePost200Response bookingapiAppointmentsAppointmentKeyLabelPut(appointmentKey, label)
 
 Update an appointment label
 
@@ -66,8 +66,8 @@ Update an appointment label
 import 'package:setmore_client/api.dart';
 
 final api = SetmoreClient().getAppointmentsApi();
-final String appointmentKey = XXXXX-XXXXXXXX-XXXXXX; // String | The key of the appointment to update
-final String label = Test Label; // String | The new label for the appointment
+final String appointmentKey = appointmentKey_example; // String | The key of the appointment to update
+final String label = label_example; // String | The new label for the appointment
 
 try {
     final response = api.bookingapiAppointmentsAppointmentKeyLabelPut(appointmentKey, label);
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BookingapiAppointmentsAppointmentKeyLabelPut200Response**](BookingapiAppointmentsAppointmentKeyLabelPut200Response.md)
+[**BookingapiAppointmentCreatePost200Response**](BookingapiAppointmentCreatePost200Response.md)
 
 ### Authorization
 
@@ -109,11 +109,11 @@ Fetch appointments by date range
 import 'package:setmore_client/api.dart';
 
 final api = SetmoreClient().getAppointmentsApi();
-final Date startDate = 12-02-2020; // Date | The start date for fetching appointment (format: dd-mm-yyyy)
-final Date endDate = 12-03-2020; // Date | The end date for fetching appointments (format: dd-mm-yyyy)
+final Date startDate = 2013-10-20; // Date | The start date for fetching appointment (format: dd-mm-yyyy)
+final Date endDate = 2013-10-20; // Date | The end date for fetching appointments (format: dd-mm-yyyy)
 final bool customerDetails = true; // bool | Whether to include customer details in the response
-final String staffKey = xxxxxxxxxxx; // String | The key of the staff to fetch appointments for
-final String cursor = xxxxxxxx; // String | The cursor for pagination to fetch the next batch of appointments
+final String staffKey = staffKey_example; // String | The key of the staff to fetch appointments for
+final String cursor = cursor_example; // String | The cursor for pagination to fetch the next batch of appointments
 
 try {
     final response = api.bookingapiAppointmentsGet(startDate, endDate, customerDetails, staffKey, cursor);
@@ -158,11 +158,11 @@ Fetch appointments by date range
 import 'package:setmore_client/api.dart';
 
 final api = SetmoreClient().getAppointmentsApi();
-final Date startDate = 12-02-2020; // Date | The start date for fetching appointments (format: dd-mm-yyyy)
-final Date endDate = 12-03-2020; // Date | The end date for fetching appointments (format: dd-mm-yyyy)
-final String staffKey = xxxxxxxxxxx; // String | The key of the staff to fetch appointments for
+final Date startDate = 2013-10-20; // Date | The start date for fetching appointments (format: dd-mm-yyyy)
+final Date endDate = 2013-10-20; // Date | The end date for fetching appointments (format: dd-mm-yyyy)
+final String staffKey = staffKey_example; // String | The key of the staff to fetch appointments for
 final bool customerDetails = true; // bool | Whether to include customer details in the response
-final String cursor = xxxxxxxx; // String | The cursor for pagination to fetch the next batch of appointments
+final String cursor = cursor_example; // String | The cursor for pagination to fetch the next batch of appointments
 
 try {
     final response = api.bookingapiUntestedAttributesForFetchingAppointmentsGet(startDate, endDate, staffKey, customerDetails, cursor);

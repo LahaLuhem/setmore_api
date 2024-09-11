@@ -18,16 +18,16 @@ part 'token_dto.g.dart';
 @BuiltValue()
 abstract class TokenDto implements Built<TokenDto, TokenDtoBuilder> {
   @BuiltValueField(wireName: r'access_token')
-  String? get accessToken;
+  String get accessToken;
 
   @BuiltValueField(wireName: r'token_type')
-  String? get tokenType;
+  String get tokenType;
 
   @BuiltValueField(wireName: r'expires_in')
-  int? get expiresIn;
+  int get expiresIn;
 
   @BuiltValueField(wireName: r'user_id')
-  String? get userId;
+  String get userId;
 
   TokenDto._();
 
@@ -52,34 +52,26 @@ class _$TokenDtoSerializer implements PrimitiveSerializer<TokenDto> {
     TokenDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.accessToken != null) {
-      yield r'access_token';
-      yield serializers.serialize(
-        object.accessToken,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.tokenType != null) {
-      yield r'token_type';
-      yield serializers.serialize(
-        object.tokenType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expiresIn != null) {
-      yield r'expires_in';
-      yield serializers.serialize(
-        object.expiresIn,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.userId != null) {
-      yield r'user_id';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'access_token';
+    yield serializers.serialize(
+      object.accessToken,
+      specifiedType: const FullType(String),
+    );
+    yield r'token_type';
+    yield serializers.serialize(
+      object.tokenType,
+      specifiedType: const FullType(String),
+    );
+    yield r'expires_in';
+    yield serializers.serialize(
+      object.expiresIn,
+      specifiedType: const FullType(int),
+    );
+    yield r'user_id';
+    yield serializers.serialize(
+      object.userId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override

@@ -64,9 +64,9 @@ Get customer details
 import 'package:setmore_client/api.dart';
 
 final api = SetmoreClient().getCustomersApi();
-final String firstname = name; // String | The first name of the customer
-final String phone = phone; // String | The phone number of the customer
-final String email = emailId; // String | The email ID of the customer
+final String firstname = firstname_example; // String | The first name of the customer
+final String phone = phone_example; // String | The phone number of the customer
+final String email = email_example; // String | The email ID of the customer
 
 try {
     final response = api.bookingapiCustomerGet(firstname, phone, email);
