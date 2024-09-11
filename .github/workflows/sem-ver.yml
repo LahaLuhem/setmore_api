@@ -1,0 +1,54 @@
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+jobs:
+  update-changelog:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get Merge Request Info
+        id: get_mr_info
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          for label in ${{ github.event.pull_request.labels }}; do
+            echo "PR Label: $label"
+          done
+      # - name: Determine Semantic Log Type
+      #   id: determine_log_type
+      #   run: |
+      #     case ${{ steps.extract_mr_info.outputs.mr_sem_label }} in
+      #       "enhancement") echo "::set-output name=sem_log_type::added" ;;
+      #       "change") echo "::set-output name=sem_log_type::changed" ;;
+      #       "deprecate") echo "::set-output name=sem_log_type::deprecated" ;;
+      #       "remove") echo "::set-output name=sem_log_type::removed" ;;
+      #       "bug") echo "::set-output name=sem_log_type::fixed" ;;
+      #       "security") echo "::set-output name=sem_log_type::security" ;;
+      #     esac
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: $LATEST_FLUTTER_VERSION
+      - name: Update Changelog
+        run: |
+          flutter pub get
+          dart pub global activate cider
+          cider log "${{ steps.determine_log_type.outputs.sem_log_type }}" "${{ steps.extract_mr_info.outputs.mr_title }}"
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Updated changelog
+          commit_options: '--no-verify --signoff -o ci.skip'
+          skip_dirty_check: true    
+          skip_fetch: true    
+          skip_checkout: true
+          disable_globbing: true
