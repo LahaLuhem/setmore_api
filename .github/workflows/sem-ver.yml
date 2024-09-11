@@ -40,7 +40,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: $LATEST_FLUTTER_VERSION
+          flutter-version: ${{ env.LATEST_FLUTTER_VERSION }}
       - name: Update Changelog
         run: |
           flutter pub get
